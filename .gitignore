@@ -1,0 +1,6 @@
+node_modules
+!/client/node_modules/core-js/client/shim.min.js
+!/client/node_modules/zone.js/dist/zone.js
+!/client/node_modules/reflect-metadata/Reflect.js
+!/client/node_modules/systemjs/dist/system.src.js
+.idea

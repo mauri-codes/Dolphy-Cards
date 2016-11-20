@@ -4,6 +4,7 @@ import { FormsModule }          from '@angular/forms';
 
 import { AppComponent }         from './app.component';
 import { FlashcardsComponent }  from './flashcards/flashcards.component'
+import { FlashcardDetailComponent }   from './flashcards/flashcard-detail.component'
 
 @NgModule({
     imports:      [
@@ -12,7 +13,9 @@ import { FlashcardsComponent }  from './flashcards/flashcards.component'
     ],
     declarations: [
         AppComponent,
-        FlashcardsComponent],
+        FlashcardsComponent,
+        FlashcardDetailComponent
+    ],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

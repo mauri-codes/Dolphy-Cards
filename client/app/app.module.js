@@ -13,6 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var flashcards_component_1 = require('./flashcards/flashcards.component');
+var flashcard_detail_component_1 = require('./flashcards/flashcard-detail.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,7 +25,9 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                flashcards_component_1.FlashcardsComponent],
+                flashcards_component_1.FlashcardsComponent,
+                flashcard_detail_component_1.FlashcardDetailComponent
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component }            from '@angular/core';
+
+import { FlashCard }            from './FlashCard';
+
 @Component({
     moduleId: module.id,
     selector: 'flashcard',
@@ -10,19 +13,7 @@ import { Component } from '@angular/core';
             <span>{{flashcard.front}} </span>{{flashcard.back}}
         </li>
       </ul>
-      <div *ngIf="selectedFlashcard">
-         <div><label>id: </label>{{selectedFlashcard.id}}</div>
-          <div><label>front: </label>{{selectedFlashcard.front}}</div>
-          <div><label>back: </label>{{selectedFlashcard.back}}</div>
-          
-          <div>
-            <label>front: </label>
-            <input [(ngModel)]="selectedFlashcard.front" placeholder="front">
-            <label>back: </label>
-            <input [(ngModel)]="selectedFlashcard.back"  placeholder="back">
-          </div>
-      </div>
-
+      <flashcard-detail [Flashcard]="selectedFlashcard" ></flashcard-detail>
       `
 
 })
@@ -33,11 +24,6 @@ export class FlashcardsComponent {
     onSelect(flashcard: FlashCard):void{
         this.selectedFlashcard = flashcard;
     }
-}
-
-export class FlashCard {
-    front: string;
-    back: string;
 }
 
 const FLASHCARDS: FlashCard[] = [

@@ -21,19 +21,13 @@ var FlashcardsComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'flashcard',
-            template: "\n      <h1>{{title}}</h1>\n      \n      <ul>\n        <li *ngFor=\"let flashcard of flashcards\" (click)=\"onSelect(flashcard)\">\n            <span>{{flashcard.front}} </span>{{flashcard.back}}\n        </li>\n      </ul>\n      <div *ngIf=\"selectedFlashcard\">\n         <div><label>id: </label>{{selectedFlashcard.id}}</div>\n          <div><label>front: </label>{{selectedFlashcard.front}}</div>\n          <div><label>back: </label>{{selectedFlashcard.back}}</div>\n          \n          <div>\n            <label>front: </label>\n            <input [(ngModel)]=\"selectedFlashcard.front\" placeholder=\"front\">\n            <label>back: </label>\n            <input [(ngModel)]=\"selectedFlashcard.back\"  placeholder=\"back\">\n          </div>\n      </div>\n\n      "
+            template: "\n      <h1>{{title}}</h1>\n      \n      <ul>\n        <li *ngFor=\"let flashcard of flashcards\" (click)=\"onSelect(flashcard)\">\n            <span>{{flashcard.front}} </span>{{flashcard.back}}\n        </li>\n      </ul>\n      <flashcard-detail [Flashcard]=\"selectedFlashcard\" ></flashcard-detail>\n      "
         }), 
         __metadata('design:paramtypes', [])
     ], FlashcardsComponent);
     return FlashcardsComponent;
 }());
 exports.FlashcardsComponent = FlashcardsComponent;
-var FlashCard = (function () {
-    function FlashCard() {
-    }
-    return FlashCard;
-}());
-exports.FlashCard = FlashCard;
 var FLASHCARDS = [
     { id: 1, front: 'Arduino Yun', back: 'is a great board' },
     { id: 2, front: 'Linux', back: 'is a great operating system' },

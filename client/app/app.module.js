@@ -14,6 +14,7 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var flashcards_component_1 = require('./flashcards/flashcards.component');
 var flashcard_detail_component_1 = require('./flashcards/flashcard-detail.component');
+//import {FlashcardService} from "./flashcards/flashcard.service";
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,6 +29,7 @@ var AppModule = (function () {
                 flashcards_component_1.FlashcardsComponent,
                 flashcard_detail_component_1.FlashcardDetailComponent
             ],
+            //providers: [FlashcardService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

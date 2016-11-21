@@ -9,33 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var flashcard_service_1 = require('./flashcard.service');
 var FlashcardsComponent = (function () {
-    function FlashcardsComponent() {
+    //Angular will create an instance of Flashcard when FlashcardsComponent is created
+    function FlashcardsComponent(flashcardService) {
+        this.flashcardService = flashcardService;
         this.title = "my flashcard";
-        this.flashcards = FLASHCARDS;
     }
+    FlashcardsComponent.prototype.ngOnInit = function () {
+        this.getFlashcard();
+    };
     FlashcardsComponent.prototype.onSelect = function (flashcard) {
         this.selectedFlashcard = flashcard;
+    };
+    FlashcardsComponent.prototype.getFlashcard = function () {
+        var _this = this;
+        this.flashcardService.getFlashcards().then(function (flashcards) { return _this.flashcards = flashcards; });
     };
     FlashcardsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'flashcard',
-            template: "\n      <h1>{{title}}</h1>\n      \n      <ul>\n        <li *ngFor=\"let flashcard of flashcards\" (click)=\"onSelect(flashcard)\">\n            <span>{{flashcard.front}} </span>{{flashcard.back}}\n        </li>\n      </ul>\n      <flashcard-detail [Flashcard]=\"selectedFlashcard\" ></flashcard-detail>\n      "
+            template: "\n      <h1>{{title}}</h1>\n      \n      <ul>\n        <li *ngFor=\"let flashcard of flashcards\" (click)=\"onSelect(flashcard)\">\n            <span>{{flashcard.front}} </span>{{flashcard.back}}\n        </li>\n      </ul>\n      <flashcard-detail [Flashcard]=\"selectedFlashcard\" ></flashcard-detail>\n      ",
+            providers: [flashcard_service_1.FlashcardService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [flashcard_service_1.FlashcardService])
     ], FlashcardsComponent);
     return FlashcardsComponent;
 }());
 exports.FlashcardsComponent = FlashcardsComponent;
-var FLASHCARDS = [
-    { id: 1, front: 'Arduino Yun', back: 'is a great board' },
-    { id: 2, front: 'Linux', back: 'is a great operating system' },
-    { id: 3, front: 'Android', back: 'is a great Mobile OS' },
-    { id: 4, front: 'Jquery', back: 'is a great js library' },
-    { id: 5, front: 'Node.js', back: 'is a great back-end option' },
-    { id: 6, front: 'php', back: 'is a piece of shit' },
-    { id: 7, front: 'angular', back: 'is a great tool' },
-    { id: 8, front: 'IU', back: 'is a great singer' },
-];
 //# sourceMappingURL=flashcards.component.js.map

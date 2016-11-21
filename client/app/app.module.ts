@@ -5,6 +5,7 @@ import { FormsModule }          from '@angular/forms';
 import { AppComponent }         from './app.component';
 import { FlashcardsComponent }  from './flashcards/flashcards.component'
 import { FlashcardDetailComponent }   from './flashcards/flashcard-detail.component'
+//import {FlashcardService} from "./flashcards/flashcard.service";
 
 @NgModule({
     imports:      [
@@ -16,6 +17,7 @@ import { FlashcardDetailComponent }   from './flashcards/flashcard-detail.compon
         FlashcardsComponent,
         FlashcardDetailComponent
     ],
+    //providers: [FlashcardService],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
